@@ -1,0 +1,468 @@
+[0m21:58:44.103885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D1105CFC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D111DC7690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D10C990BD0>]}
+
+
+============================== 21:58:44.106938 | 5fba0857-cb65-4118-9e24-93315893fea0 ==============================
+[0m21:58:44.106938 [info ] [MainThread]: Running with dbt=1.11.10
+[0m21:58:44.107886 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init AnalyticsForge', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m21:58:44.127886 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\Asus\.dbt
+[0m21:58:44.129886 [debug] [MainThread]: Starter project path: C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\include\starter_project
+[0m21:58:44.162460 [info ] [MainThread]: 
+Your new dbt project "AnalyticsForge" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:58:44.163462 [info ] [MainThread]: Setting up your profile.
+[0m21:59:22.856455 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m21:59:22.857477 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m21:59:22.857477 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m21:59:51.570331 [error] [MainThread]: Encountered an error:
+list index out of range
+[0m21:59:51.574333 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\cli\main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\anaconda3\envs\af\Lib\site-packages\dbt\task\init.py", line 114, in generate_target_from_input
+    choice = option_list[numeric_choice - 1]
+             ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+
+[0m21:59:51.576333 [debug] [MainThread]: Command `dbt init` failed at 21:59:51.575334 after 67.54 seconds
+[0m21:59:51.576333 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D110D41010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D110D437D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D13A415E10>]}
+[0m21:59:51.577333 [debug] [MainThread]: Flushing usage events
+[0m21:59:53.619452 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:00:17.820451 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281ADF7A990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281B28936D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281B15FAB90>]}
+
+
+============================== 22:00:17.824452 | bc6e05a5-3c66-4ef1-af80-463607c92af3 ==============================
+[0m22:00:17.824452 [info ] [MainThread]: Running with dbt=1.11.10
+[0m22:00:17.825450 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init AnalyticsForge', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:00:17.844450 [info ] [MainThread]: A project called AnalyticsForge already exists here.
+[0m22:00:17.845450 [debug] [MainThread]: Command `dbt init` succeeded at 22:00:17.845450 after 0.09 seconds
+[0m22:00:17.846493 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281AACD4990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281ADF84190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000281B15144D0>]}
+[0m22:00:17.847451 [debug] [MainThread]: Flushing usage events
+[0m22:00:18.786862 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:10:59.071349 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B26E06590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B26E05CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B26E05ED0>]}
+
+
+============================== 22:10:59.075554 | 2744201a-8cbe-4388-9738-52d414e7bc3c ==============================
+[0m22:10:59.075554 [info ] [MainThread]: Running with dbt=1.11.10
+[0m22:10:59.075554 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:10:59.091703 [info ] [MainThread]: dbt version: 1.11.10
+[0m22:10:59.092710 [info ] [MainThread]: python version: 3.11.15
+[0m22:10:59.093709 [info ] [MainThread]: python path: C:\Users\Asus\anaconda3\envs\af\python.exe
+[0m22:10:59.094709 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m22:10:59.845305 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:10:59.846306 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:10:59.846306 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:10:59.896985 [info ] [MainThread]: Using profiles dir at C:\Users\Asus\.dbt
+[0m22:10:59.897941 [info ] [MainThread]: Using profiles.yml file at C:\Users\Asus\.dbt\profiles.yml
+[0m22:10:59.897941 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml
+[0m22:10:59.899941 [info ] [MainThread]: adapter type: snowflake
+[0m22:10:59.899941 [info ] [MainThread]: adapter version: 1.11.5
+[0m22:10:59.900942 [info ] [MainThread]: Configuration:
+[0m22:10:59.901704 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:10:59.901704 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:10:59.902714 [info ] [MainThread]: Required dependencies:
+[0m22:10:59.903715 [debug] [MainThread]: Executing "git --help"
+[0m22:10:59.926714 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:10:59.927714 [debug] [MainThread]: STDERR: "b''"
+[0m22:10:59.928716 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:10:59.928716 [info ] [MainThread]: Connection:
+[0m22:10:59.929714 [info ] [MainThread]:   account: dcpiyha-qu14517
+[0m22:10:59.929714 [info ] [MainThread]:   user: tar7nic
+[0m22:10:59.930715 [info ] [MainThread]:   database: ANALYTICS
+[0m22:10:59.931714 [info ] [MainThread]:   warehouse: ANALYTICSFORGE_WH
+[0m22:10:59.931714 [info ] [MainThread]:   role: DBT_ROLE
+[0m22:10:59.932715 [info ] [MainThread]:   schema: dbt_tar7nic
+[0m22:10:59.932715 [info ] [MainThread]:   authenticator: None
+[0m22:10:59.933715 [info ] [MainThread]:   oauth_client_id: None
+[0m22:10:59.933715 [info ] [MainThread]:   query_tag: None
+[0m22:10:59.934715 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:10:59.934715 [info ] [MainThread]:   host: None
+[0m22:10:59.935714 [info ] [MainThread]:   port: None
+[0m22:10:59.935714 [info ] [MainThread]:   proxy_host: None
+[0m22:10:59.936714 [info ] [MainThread]:   proxy_port: None
+[0m22:10:59.937714 [info ] [MainThread]:   protocol: None
+[0m22:10:59.937714 [info ] [MainThread]:   connect_retries: 1
+[0m22:10:59.938715 [info ] [MainThread]:   connect_timeout: None
+[0m22:10:59.939714 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:10:59.940715 [info ] [MainThread]:   retry_all: False
+[0m22:10:59.941715 [info ] [MainThread]:   insecure_mode: False
+[0m22:10:59.941715 [info ] [MainThread]:   reuse_connections: True
+[0m22:10:59.942715 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m22:10:59.943715 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m22:10:59.943715 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m22:11:00.229860 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:11:00.360680 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:11:00.360680 [debug] [MainThread]: On debug: select 1 as id
+[0m22:11:00.361653 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:11:01.569525 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m22:11:01.569525 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m22:11:01.570523 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m22:11:01.570523 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m22:11:01.571525 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml> not found
+
+[0m22:11:01.571525 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  250001 (08001): Failed to connect to DB: dcpiyha-qu14517.snowflakecomputing.com:443. Incorrect username or password was specified.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m22:11:01.573525 [debug] [MainThread]: Command `dbt debug` failed at 22:11:01.572525 after 2.57 seconds
+[0m22:11:01.573525 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:11:01.573525 [debug] [MainThread]: On debug: No close available on handle
+[0m22:11:01.574525 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B26E723D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B26E726D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000024B506BAB10>]}
+[0m22:11:01.574525 [debug] [MainThread]: Flushing usage events
+[0m22:11:02.958998 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:13:22.503352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8F7996690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8F7997710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8F7A038D0>]}
+
+
+============================== 22:13:22.507351 | 4e906f3b-4e0f-473a-adaa-872a15e56637 ==============================
+[0m22:13:22.507351 [info ] [MainThread]: Running with dbt=1.11.10
+[0m22:13:22.508353 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m22:13:22.528351 [info ] [MainThread]: dbt version: 1.11.10
+[0m22:13:22.528351 [info ] [MainThread]: python version: 3.11.15
+[0m22:13:22.529352 [info ] [MainThread]: python path: C:\Users\Asus\anaconda3\envs\af\python.exe
+[0m22:13:22.530351 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m22:13:23.253599 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m22:13:23.254631 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m22:13:23.254631 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m22:13:23.304957 [info ] [MainThread]: Using profiles dir at C:\Users\Asus\.dbt
+[0m22:13:23.305922 [info ] [MainThread]: Using profiles.yml file at C:\Users\Asus\.dbt\profiles.yml
+[0m22:13:23.305922 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml
+[0m22:13:23.306923 [info ] [MainThread]: adapter type: snowflake
+[0m22:13:23.307922 [info ] [MainThread]: adapter version: 1.11.5
+[0m22:13:23.308922 [info ] [MainThread]: Configuration:
+[0m22:13:23.308922 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:13:23.309922 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:13:23.309922 [info ] [MainThread]: Required dependencies:
+[0m22:13:23.310922 [debug] [MainThread]: Executing "git --help"
+[0m22:13:23.331927 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:13:23.331927 [debug] [MainThread]: STDERR: "b''"
+[0m22:13:23.332942 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:13:23.332942 [info ] [MainThread]: Connection:
+[0m22:13:23.333923 [info ] [MainThread]:   account: dcpiyha-qu14517
+[0m22:13:23.334922 [info ] [MainThread]:   user: tar7nic
+[0m22:13:23.334922 [info ] [MainThread]:   database: ANALYTICS
+[0m22:13:23.335925 [info ] [MainThread]:   warehouse: ANALYTICSFORGE_WH
+[0m22:13:23.335925 [info ] [MainThread]:   role: DBT_ROLE
+[0m22:13:23.336926 [info ] [MainThread]:   schema: dbt_tar7nic
+[0m22:13:23.336926 [info ] [MainThread]:   authenticator: None
+[0m22:13:23.337928 [info ] [MainThread]:   oauth_client_id: None
+[0m22:13:23.338932 [info ] [MainThread]:   query_tag: None
+[0m22:13:23.338932 [info ] [MainThread]:   client_session_keep_alive: False
+[0m22:13:23.339927 [info ] [MainThread]:   host: None
+[0m22:13:23.339927 [info ] [MainThread]:   port: None
+[0m22:13:23.340927 [info ] [MainThread]:   proxy_host: None
+[0m22:13:23.341928 [info ] [MainThread]:   proxy_port: None
+[0m22:13:23.341928 [info ] [MainThread]:   protocol: None
+[0m22:13:23.344928 [info ] [MainThread]:   connect_retries: 1
+[0m22:13:23.344928 [info ] [MainThread]:   connect_timeout: None
+[0m22:13:23.345927 [info ] [MainThread]:   retry_on_database_errors: False
+[0m22:13:23.345927 [info ] [MainThread]:   retry_all: False
+[0m22:13:23.346926 [info ] [MainThread]:   insecure_mode: False
+[0m22:13:23.347928 [info ] [MainThread]:   reuse_connections: True
+[0m22:13:23.348930 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m22:13:23.348930 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m22:13:23.350434 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m22:13:23.631184 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m22:13:23.743216 [debug] [MainThread]: Using snowflake connection "debug"
+[0m22:13:23.743216 [debug] [MainThread]: On debug: select 1 as id
+[0m22:13:23.744255 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:13:25.018375 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.275 seconds
+[0m22:13:25.019547 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:13:25.020447 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:13:25.021448 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml> not found
+
+[0m22:13:25.022448 [debug] [MainThread]: Command `dbt debug` failed at 22:13:25.022448 after 2.58 seconds
+[0m22:13:25.022448 [debug] [MainThread]: Connection 'debug' was left open.
+[0m22:13:25.023448 [debug] [MainThread]: On debug: Close
+[0m22:13:25.220962 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8F7A03D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A89EC3C7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8F6923390>]}
+[0m22:13:25.221945 [debug] [MainThread]: Flushing usage events
+[0m22:13:26.390308 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:32:59.908587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C8655E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C8691350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C6706E90>]}
+
+
+============================== 00:32:59.912639 | d5019f91-bc75-4431-82ed-7dd7b57e11dc ==============================
+[0m00:32:59.912639 [info ] [MainThread]: Running with dbt=1.11.10
+[0m00:32:59.913540 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'invocation_command': 'dbt init', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:33:12.420883 [info ] [MainThread]: A project called AnalyticsForge already exists here.
+[0m00:33:12.422883 [debug] [MainThread]: Command `dbt init` succeeded at 00:33:12.422883 after 12.58 seconds
+[0m00:33:12.422883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C0BC5010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C09EB0D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C09EAD10>]}
+[0m00:33:12.423887 [debug] [MainThread]: Flushing usage events
+[0m00:33:13.474419 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:33:22.431059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AD02010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A49C23010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4ACD05D0>]}
+
+
+============================== 00:33:22.435075 | 1dbfea74-2620-48e2-949a-c03f03259432 ==============================
+[0m00:33:22.435075 [info ] [MainThread]: Running with dbt=1.11.10
+[0m00:33:22.436068 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m00:33:22.454084 [info ] [MainThread]: dbt version: 1.11.10
+[0m00:33:22.455089 [info ] [MainThread]: python version: 3.11.15
+[0m00:33:22.456089 [info ] [MainThread]: python path: C:\Users\Asus\anaconda3\envs\af\python.exe
+[0m00:33:22.456089 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:33:23.259963 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m00:33:23.260962 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m00:33:23.260962 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m00:33:23.313484 [info ] [MainThread]: Using profiles dir at C:\Users\Asus\.dbt
+[0m00:33:23.314471 [info ] [MainThread]: Using profiles.yml file at C:\Users\Asus\.dbt\profiles.yml
+[0m00:33:23.314471 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml
+[0m00:33:23.316055 [info ] [MainThread]: adapter type: snowflake
+[0m00:33:23.316055 [info ] [MainThread]: adapter version: 1.11.5
+[0m00:33:23.317060 [info ] [MainThread]: Configuration:
+[0m00:33:23.317629 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:33:23.317629 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m00:33:23.318644 [info ] [MainThread]: Required dependencies:
+[0m00:33:23.319644 [debug] [MainThread]: Executing "git --help"
+[0m00:33:23.343762 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:33:23.344777 [debug] [MainThread]: STDERR: "b''"
+[0m00:33:23.344777 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:33:23.345761 [info ] [MainThread]: Connection:
+[0m00:33:23.345761 [info ] [MainThread]:   account: dcpiyha-qu14517
+[0m00:33:23.346761 [info ] [MainThread]:   user: tar7nic
+[0m00:33:23.347428 [info ] [MainThread]:   database: ANALYTICS
+[0m00:33:23.347428 [info ] [MainThread]:   warehouse: ANALYTICSFORGE_WH
+[0m00:33:23.348436 [info ] [MainThread]:   role: DBT_ROLE
+[0m00:33:23.349223 [info ] [MainThread]:   schema: dbt_tar7nic
+[0m00:33:23.349223 [info ] [MainThread]:   authenticator: None
+[0m00:33:23.350230 [info ] [MainThread]:   oauth_client_id: None
+[0m00:33:23.351231 [info ] [MainThread]:   query_tag: None
+[0m00:33:23.351231 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:33:23.352231 [info ] [MainThread]:   host: None
+[0m00:33:23.352231 [info ] [MainThread]:   port: None
+[0m00:33:23.353231 [info ] [MainThread]:   proxy_host: None
+[0m00:33:23.354231 [info ] [MainThread]:   proxy_port: None
+[0m00:33:23.354231 [info ] [MainThread]:   protocol: None
+[0m00:33:23.355236 [info ] [MainThread]:   connect_retries: 1
+[0m00:33:23.355236 [info ] [MainThread]:   connect_timeout: None
+[0m00:33:23.356236 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:33:23.357236 [info ] [MainThread]:   retry_all: False
+[0m00:33:23.358240 [info ] [MainThread]:   insecure_mode: False
+[0m00:33:23.358240 [info ] [MainThread]:   reuse_connections: True
+[0m00:33:23.359238 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m00:33:23.360236 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m00:33:23.361235 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m00:33:23.633449 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:33:23.762323 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:33:23.762323 [debug] [MainThread]: On debug: select 1 as id
+[0m00:33:23.763323 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:33:25.153097 [debug] [MainThread]: SQL status: SUCCESS 1 in 1.390 seconds
+[0m00:33:25.154211 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:33:25.155162 [info ] [MainThread]: [31m1 check failed:[0m
+[0m00:33:25.155162 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml> not found
+
+[0m00:33:25.157102 [debug] [MainThread]: Command `dbt debug` failed at 00:33:25.157102 after 2.79 seconds
+[0m00:33:25.157102 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:33:25.158103 [debug] [MainThread]: On debug: Close
+[0m00:33:25.432264 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AD03650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A4AD02150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A49A6AD10>]}
+[0m00:33:25.433265 [debug] [MainThread]: Flushing usage events
+[0m00:33:26.474798 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:37:38.926637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7517E2950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7517E12D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7517E21D0>]}
+
+
+============================== 00:37:38.930636 | cfa47f8a-816c-43b9-b4ba-81e0e3ea0ecd ==============================
+[0m00:37:38.930636 [info ] [MainThread]: Running with dbt=1.11.10
+[0m00:37:38.931637 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Asus\\VSCode\\AnalyticsForge\\logs'}
+[0m00:37:38.949350 [info ] [MainThread]: dbt version: 1.11.10
+[0m00:37:38.950350 [info ] [MainThread]: python version: 3.11.15
+[0m00:37:38.950350 [info ] [MainThread]: python path: C:\Users\Asus\anaconda3\envs\af\python.exe
+[0m00:37:38.951351 [info ] [MainThread]: os info: Windows-10-10.0.26200-SP0
+[0m00:37:39.736508 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m00:37:39.737510 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m00:37:39.737510 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m00:37:39.788411 [info ] [MainThread]: Using profiles dir at C:\Users\Asus\.dbt
+[0m00:37:39.789414 [info ] [MainThread]: Using profiles.yml file at C:\Users\Asus\.dbt\profiles.yml
+[0m00:37:39.790148 [info ] [MainThread]: Using dbt_project.yml file at C:\Users\Asus\VSCode\AnalyticsForge\dbt_project.yml
+[0m00:37:39.791174 [info ] [MainThread]: adapter type: snowflake
+[0m00:37:39.792679 [info ] [MainThread]: adapter version: 1.11.5
+[0m00:37:39.870134 [info ] [MainThread]: Configuration:
+[0m00:37:39.872134 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m00:37:39.873135 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m00:37:39.873906 [info ] [MainThread]: Required dependencies:
+[0m00:37:39.873906 [debug] [MainThread]: Executing "git --help"
+[0m00:37:39.894103 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m00:37:39.894103 [debug] [MainThread]: STDERR: "b''"
+[0m00:37:39.895105 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m00:37:39.896103 [info ] [MainThread]: Connection:
+[0m00:37:39.896103 [info ] [MainThread]:   account: dcpiyha-qu14517
+[0m00:37:39.897104 [info ] [MainThread]:   user: tar7nic
+[0m00:37:39.897104 [info ] [MainThread]:   database: ANALYTICS
+[0m00:37:39.898103 [info ] [MainThread]:   warehouse: ANALYTICSFORGE_WH
+[0m00:37:39.898103 [info ] [MainThread]:   role: DBT_ROLE
+[0m00:37:39.899084 [info ] [MainThread]:   schema: dbt_tar7nic
+[0m00:37:39.900095 [info ] [MainThread]:   authenticator: None
+[0m00:37:39.900095 [info ] [MainThread]:   oauth_client_id: None
+[0m00:37:39.901095 [info ] [MainThread]:   query_tag: None
+[0m00:37:39.901095 [info ] [MainThread]:   client_session_keep_alive: False
+[0m00:37:39.902094 [info ] [MainThread]:   host: None
+[0m00:37:39.903095 [info ] [MainThread]:   port: None
+[0m00:37:39.903095 [info ] [MainThread]:   proxy_host: None
+[0m00:37:39.904094 [info ] [MainThread]:   proxy_port: None
+[0m00:37:39.904094 [info ] [MainThread]:   protocol: None
+[0m00:37:39.905094 [info ] [MainThread]:   connect_retries: 1
+[0m00:37:39.906093 [info ] [MainThread]:   connect_timeout: None
+[0m00:37:39.906597 [info ] [MainThread]:   retry_on_database_errors: False
+[0m00:37:39.907605 [info ] [MainThread]:   retry_all: False
+[0m00:37:39.908603 [info ] [MainThread]:   insecure_mode: False
+[0m00:37:39.909604 [info ] [MainThread]:   reuse_connections: True
+[0m00:37:39.909604 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m00:37:39.910604 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m00:37:39.911603 [info ] [MainThread]: Registered adapter: snowflake=1.11.5
+[0m00:37:40.199500 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m00:37:40.329388 [debug] [MainThread]: Using snowflake connection "debug"
+[0m00:37:40.329388 [debug] [MainThread]: On debug: select 1 as id
+[0m00:37:40.330417 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:37:41.195238 [debug] [MainThread]: SQL status: SUCCESS 1 in 0.864 seconds
+[0m00:37:41.196132 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m00:37:41.196660 [info ] [MainThread]: [32mAll checks passed![0m
+[0m00:37:41.197848 [debug] [MainThread]: Command `dbt debug` succeeded at 00:37:41.197848 after 2.33 seconds
+[0m00:37:41.197848 [debug] [MainThread]: Connection 'debug' was left open.
+[0m00:37:41.197848 [debug] [MainThread]: On debug: Close
+[0m00:37:41.407041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D75184CD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D7505AAA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001D75181FC50>]}
+[0m00:37:41.407041 [debug] [MainThread]: Flushing usage events
+[0m00:37:42.403754 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:38:36.541732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F6E0ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F6E0FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F6E0850>]}
+
+
+============================== 00:38:36.545731 | 77140ab7-446b-4597-9b99-49e9fc713e41 ==============================
+[0m00:38:36.545731 [info ] [MainThread]: Running with dbt=1.11.10
+[0m00:38:36.546731 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt deps', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Asus\\VSCode\\AnalyticsForge\\logs'}
+[0m00:38:36.686296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F82C110>]}
+[0m00:38:36.713610 [debug] [MainThread]: Set downloads directory='C:\Users\Asus\AppData\Local\Temp\dbt-downloads-ccagsqbd'
+[0m00:38:36.714610 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m00:38:37.176579 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m00:38:37.177579 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m00:38:37.548227 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m00:38:37.554227 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/elementary-data/elementary.json
+[0m00:38:38.369631 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/elementary-data/elementary.json 200
+[0m00:38:38.376632 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m00:38:38.648010 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m00:38:38.651177 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json
+[0m00:38:39.363355 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json 200
+[0m00:38:39.364355 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `calogica/dbt_expectations` package is deprecated in favor of
+`metaplane/dbt_expectations`. Please update your `packages.yml` configuration to
+use `metaplane/dbt_expectations` instead.
+[0m00:38:39.373355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F74CCD0>]}
+[0m00:38:39.378355 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json
+[0m00:38:40.147337 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json 200
+[0m00:38:40.164495 [info ] [MainThread]: Updating lock file in file path: C:\Users\Asus\VSCode\AnalyticsForge/package-lock.yml
+[0m00:38:40.176499 [debug] [MainThread]: Set downloads directory='C:\Users\Asus\AppData\Local\Temp\dbt-downloads-rhcui69r'
+[0m00:38:40.188494 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m00:38:41.139773 [info ] [MainThread]: Installed from version 1.3.3
+[0m00:38:41.139773 [info ] [MainThread]: Up to date!
+[0m00:38:41.140773 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0E653AD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F8C8590>]}
+[0m00:38:41.141775 [info ] [MainThread]: Installing elementary-data/elementary
+[0m00:38:42.160176 [info ] [MainThread]: Installed from version 0.23.1
+[0m00:38:42.161182 [info ] [MainThread]: Up to date!
+[0m00:38:42.162176 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0FD776D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F6D6C50>]}
+[0m00:38:42.162176 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m00:38:42.676758 [info ] [MainThread]: Installed from version 0.14.1
+[0m00:38:42.677759 [info ] [MainThread]: Up to date!
+[0m00:38:42.677759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F74CD50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F8E5850>]}
+[0m00:38:42.678760 [info ] [MainThread]: Installing calogica/dbt_expectations
+[0m00:38:46.039060 [info ] [MainThread]: Installed from version 0.10.4
+[0m00:38:46.040060 [info ] [MainThread]: Up to date!
+[0m00:38:46.041059 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F8E5850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F7E71D0>]}
+[0m00:38:46.041059 [info ] [MainThread]: Installing calogica/dbt_date
+[0m00:38:46.473480 [info ] [MainThread]: Installed from version 0.10.1
+[0m00:38:46.474480 [info ] [MainThread]: Up to date!
+[0m00:38:46.475481 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '77140ab7-446b-4597-9b99-49e9fc713e41', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F8A5FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0F8AF890>]}
+[0m00:38:46.478481 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PackageRedirectDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m00:38:46.479481 [debug] [MainThread]: Command `dbt deps` succeeded at 00:38:46.479481 after 10.01 seconds
+[0m00:38:46.480483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE0D836C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE07BB42D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DE079CABD0>]}
+[0m00:38:46.480483 [debug] [MainThread]: Flushing usage events
+[0m00:38:47.433816 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:39:33.607812 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332360590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223323610D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332362690>]}
+
+
+============================== 00:39:33.611812 | 59f6ed7d-8266-402f-8999-5b63d2ccfae2 ==============================
+[0m00:39:33.611812 [info ] [MainThread]: Running with dbt=1.11.10
+[0m00:39:33.612811 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Asus\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt deps', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Asus\\VSCode\\AnalyticsForge\\logs'}
+[0m00:39:33.731395 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002233246AE50>]}
+[0m00:39:33.760427 [debug] [MainThread]: Set downloads directory='C:\Users\Asus\AppData\Local\Temp\dbt-downloads-agre7zzh'
+[0m00:39:33.761427 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m00:39:34.164956 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m00:39:34.167005 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m00:39:34.709613 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m00:39:34.716613 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/elementary-data/elementary.json
+[0m00:39:35.164996 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/elementary-data/elementary.json 200
+[0m00:39:35.170994 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json
+[0m00:39:35.585227 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/codegen.json 200
+[0m00:39:35.588227 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/metaplane/dbt_expectations.json
+[0m00:39:35.852872 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/metaplane/dbt_expectations.json 200
+[0m00:39:35.858869 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/godatadriven/dbt_date.json
+[0m00:39:36.094510 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/godatadriven/dbt_date.json 200
+[0m00:39:36.111510 [info ] [MainThread]: Updating lock file in file path: C:\Users\Asus\VSCode\AnalyticsForge/package-lock.yml
+[0m00:39:36.357938 [debug] [MainThread]: Set downloads directory='C:\Users\Asus\AppData\Local\Temp\dbt-downloads-eieyvtq1'
+[0m00:39:36.369921 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m00:39:39.722398 [info ] [MainThread]: Installed from version 1.3.3
+[0m00:39:39.723398 [info ] [MainThread]: Up to date!
+[0m00:39:39.723398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223325334D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223324E1E90>]}
+[0m00:39:39.724399 [info ] [MainThread]: Installing elementary-data/elementary
+[0m00:39:40.909025 [info ] [MainThread]: Installed from version 0.23.1
+[0m00:39:40.910024 [info ] [MainThread]: Up to date!
+[0m00:39:40.911027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223329EA310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223323C7B50>]}
+[0m00:39:40.911027 [info ] [MainThread]: Installing dbt-labs/codegen
+[0m00:39:41.389791 [info ] [MainThread]: Installed from version 0.14.1
+[0m00:39:41.390790 [info ] [MainThread]: Up to date!
+[0m00:39:41.391792 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332A368D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332A36D10>]}
+[0m00:39:41.391792 [info ] [MainThread]: Installing metaplane/dbt_expectations
+[0m00:39:44.710224 [info ] [MainThread]: Installed from version 0.10.10
+[0m00:39:44.711225 [info ] [MainThread]: Up to date!
+[0m00:39:44.711225 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223329E9910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332A5F9D0>]}
+[0m00:39:44.712225 [info ] [MainThread]: Installing godatadriven/dbt_date
+[0m00:39:45.229990 [info ] [MainThread]: Installed from version 0.18.0
+[0m00:39:45.229990 [info ] [MainThread]: Up to date!
+[0m00:39:45.230991 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '59f6ed7d-8266-402f-8999-5b63d2ccfae2', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022332466750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000223329FF410>]}
+[0m00:39:45.234992 [debug] [MainThread]: Command `dbt deps` succeeded at 00:39:45.234992 after 11.70 seconds
+[0m00:39:45.234992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002232A814C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002232A8142D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002232A62ABD0>]}
+[0m00:39:45.235992 [debug] [MainThread]: Flushing usage events
+[0m00:39:46.197716 [debug] [MainThread]: An error was encountered while trying to flush usage events

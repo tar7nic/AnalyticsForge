@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+af/
+venv/
+*.egg-info/
+
+# Environment variables — NEVER commit secrets
+.env
+
+# dbt
+dbt/target/
+dbt/dbt_packages/
+dbt/logs/
+
+# Data files — too large for Git
+data/
+
+# OS
+.DS_Store
+Thumbs.db
