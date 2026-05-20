@@ -1,0 +1,71 @@
+# ============================================================
+# Workflow:    dbt_ci.yml
+# Description: CI pipeline triggered on every pull request to
+#              main. Compiles and tests modified dbt models.
+#              Runs sqlfluff linting on all SQL files.
+# Author:      Tarun Nichwani
+# ============================================================
+
+name: dbt CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  dbt-ci:
+    name: dbt Compile + Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install dbt-core dbt-snowflake sqlfluff sqlfluff-templater-dbt
+
+      - name: Create profiles.yml
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml << EOF
+          analyticsforge:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+                user: ${{ secrets.SNOWFLAKE_USER }}
+                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+                role: ${{ secrets.SNOWFLAKE_ROLE }}
+                warehouse: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+                database: ${{ secrets.SNOWFLAKE_DATABASE }}
+                schema: dbt_ci
+                threads: 4
+                client_session_keep_alive: false
+          EOF
+
+      - name: Install dbt packages
+        run: dbt deps
+
+      - name: dbt compile
+        run: dbt compile
+
+      - name: dbt test — staging
+        run: dbt test --select staging
+
+      - name: dbt test — intermediate
+        run: dbt test --select intermediate
+
+      - name: dbt test — marts
+        run: dbt test --select marts
+
+      - name: sqlfluff lint
+        run: |
+          sqlfluff lint models/ --dialect snowflake --templater dbt
