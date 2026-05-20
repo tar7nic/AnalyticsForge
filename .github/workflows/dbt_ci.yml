@@ -79,4 +79,4 @@ jobs:
 
       - name: sqlfluff lint
         run: |
-          sqlfluff lint models/ --dialect snowflake --templater dbt
+          sqlfluff lint models/ --dialect snowflake --templater dbt --profiles-dir ~/.dbt
