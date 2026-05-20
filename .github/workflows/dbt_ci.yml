@@ -57,14 +57,25 @@ jobs:
       - name: dbt compile
         run: dbt compile
 
-      - name: dbt test — staging
-        run: dbt test --select staging
+      - name: dbt seed + elementary setup
+        run: |
+          dbt seed
+          dbt run --select elementary
 
-      - name: dbt test — intermediate
-        run: dbt test --select intermediate
+      - name: dbt run + test — staging
+        run: |
+          dbt run --select staging
+          dbt test --select staging
 
-      - name: dbt test — marts
-        run: dbt test --select marts
+      - name: dbt run + test — intermediate
+        run: |
+          dbt run --select intermediate
+          dbt test --select intermediate
+
+      - name: dbt run + test — marts
+        run: |
+          dbt run --select marts
+          dbt test --select marts
 
       - name: sqlfluff lint
         run: |
