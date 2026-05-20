@@ -34,8 +34,8 @@ dim_date AS (
 final AS (
 
     SELECT
-        -- Surrogate key
-        {{ dbt_utils.generate_surrogate_key(['r.review_id']) }} AS review_key,
+        -- Surrogate key — use order_id + review_id to handle source duplicates
+        {{ dbt_utils.generate_surrogate_key(['r.review_id', 'r.order_id']) }} AS review_key,
 
         -- Foreign keys
         {{ dbt_utils.generate_surrogate_key(['r.order_id']) }} AS order_key,

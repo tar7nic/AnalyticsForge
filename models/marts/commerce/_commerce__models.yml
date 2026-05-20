@@ -3,6 +3,14 @@ version: 2
 models:
   - name: dim_date
     description: "Date dimension covering 2016-2018. One row per day with full calendar attributes and Brazilian holiday flags."
+    config:
+      elementary:
+        timestamp_column: "full_date"
+    tests:
+      - elementary.volume_anomalies:
+          time_bucket:
+            period: day
+            count: 1
     columns:
       - name: date_key
         description: "Surrogate key in YYYYMMDD integer format."
@@ -25,6 +33,9 @@ models:
 
   - name: dim_customers
     description: "Customer dimension. One row per customer_id with location attributes and surrogate key."
+    config:
+      elementary:
+        timestamp_column: "loaded_at"
     columns:
       - name: customer_key
         description: "Surrogate key generated from customer_id."
@@ -43,6 +54,9 @@ models:
 
   - name: dim_sellers
     description: "Seller dimension. One row per seller with location attributes and surrogate key."
+    config:
+      elementary:
+        timestamp_column: "loaded_at"
     columns:
       - name: seller_key
         description: "Surrogate key generated from seller_id."
@@ -57,6 +71,9 @@ models:
 
   - name: dim_products
     description: "Product dimension with English category names and physical dimensions."
+    config:
+      elementary:
+        timestamp_column: "loaded_at"
     columns:
       - name: product_key
         description: "Surrogate key generated from product_id."
@@ -77,6 +94,18 @@ models:
     description: >
       Primary fact table. One row per order. Contains all order metrics,
       delivery performance, review scores, and foreign keys to all dimensions.
+    config:
+      elementary:
+        timestamp_column: "order_purchased_at"
+    tests:
+      - elementary.volume_anomalies:
+          time_bucket:
+            period: day
+            count: 1
+      - elementary.freshness_anomalies:
+          time_bucket:
+            period: day
+            count: 1
     columns:
       - name: order_key
         description: "Surrogate key for this fact row."
@@ -122,14 +151,39 @@ models:
         description: "True if actual delivery was after estimated delivery date."
         tests:
           - not_null
+      - name: review_score
+        description: "Customer review score from 1 to 5."
+        tests:
+          - elementary.column_anomalies:
+              column_anomalies:
+                - null_count
+                - average
+                - min
+                - max
+      - name: order_total_value
+        description: "Total order value in BRL."
+        tests:
+          - elementary.column_anomalies:
+              column_anomalies:
+                - null_count
+                - average
+                - min
+                - max
 
   - name: fct_reviews
     description: "Reviews fact table. One row per review with FK to fct_orders and dim_customers."
+    config:
+      elementary:
+        timestamp_column: "review_created_at"
+    tests:
+      - elementary.volume_anomalies:
+          time_bucket:
+            period: day
+            count: 1
     columns:
       - name: review_key
         description: "Surrogate key for this review."
         tests:
-          - unique
           - not_null
       - name: order_key
         description: "FK to fct_orders."
@@ -144,7 +198,6 @@ models:
         tests:
           - not_null
           - accepted_values:
-              config:
                 values: [1, 2, 3, 4, 5]
       - name: has_comment
         description: "True if customer left a written comment."

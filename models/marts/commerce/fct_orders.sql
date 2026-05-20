@@ -71,11 +71,11 @@ final AS (
         o.payment_type,
 
         -- Item metrics
-        o.order_item_count,
-        o.order_item_value,
-        o.order_freight_value,
-        o.order_total_value,
-        o.total_payment_value,
+        o.order_item_count AS order_item_count,
+        o.order_item_value AS order_item_value,
+        o.order_freight_value AS order_freight_value,
+        COALESCE(o.order_total_value, 0) AS order_total_value,
+        o.total_payment_value AS total_payment_value,
         o.payment_installments AS total_installments,
 
         -- Delivery metrics — from delivery times intermediate model
