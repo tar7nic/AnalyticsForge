@@ -78,5 +78,4 @@ jobs:
           dbt test --select marts
 
       - name: sqlfluff lint
-        run: |
-          sqlfluff lint models/ --dialect snowflake --templater dbt --profiles-dir ~/.dbt
+        run: sqlfluff lint models/ --dialect snowflake --templater dbt
