@@ -1,0 +1,31 @@
+version: 2
+
+sources:
+  - name: tpch
+    description: "TPC-H sample dataset native to Snowflake. No ingestion needed."
+    database: SNOWFLAKE_SAMPLE_DATA
+    schema: TPCH_SF1
+
+    tables:
+      - name: orders
+        description: "TPC-H orders table. One row per order."
+        columns:
+          - name: O_ORDERKEY
+            tests:
+              - unique
+              - not_null
+
+      - name: lineitem
+        description: "TPC-H line items. One row per line item per order."
+        columns:
+          - name: L_ORDERKEY
+            tests:
+              - not_null
+
+      - name: customer
+        description: "TPC-H customers table."
+        columns:
+          - name: C_CUSTKEY
+            tests:
+              - unique
+              - not_null

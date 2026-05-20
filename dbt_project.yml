@@ -33,12 +33,27 @@ models:
     staging:
       +materialized: view
       +schema: staging
+      +tags: ['staging']
     intermediate:
       +materialized: view
       +schema: intermediate
+      +tags: ['intermediate']
     marts:
       +materialized: table
       +schema: marts
+      +tags: ['marts']
+      commerce:
+        +tags: ['commerce', 'daily']
+        +meta:
+          owner: 'Tarun Nichwani'
+          domain: 'commerce'
+          tier: 'gold'
+      tpch:
+        +tags: ['tpch']
+        +meta:
+          owner: 'Tarun Nichwani'
+          domain: 'tpch'
+          tier: 'gold'
 
 seeds:
   analyticsforge:

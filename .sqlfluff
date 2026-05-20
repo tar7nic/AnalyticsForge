@@ -4,6 +4,7 @@ templater = dbt
 runaway_limit = 10
 max_line_length = 120
 indent_unit = space
+exclude_rules = AL09, ST06, RF02
 
 [sqlfluff:templater:dbt]
 project_dir = ./

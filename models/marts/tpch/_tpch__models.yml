@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fct_tpch_orders
+    description: "TPC-H orders fact table with aggregated line item metrics."
+    columns:
+      - name: order_surrogate_key
+        description: "Surrogate key for this fact row."
+        tests:
+          - unique
+          - not_null
+      - name: order_key
+        description: "Natural key from TPC-H source."
+        tests:
+          - unique
+          - not_null
+      - name: gross_revenue
+        description: "Total extended price before discounts."
+        tests:
+          - not_null
+
+  - name: dim_tpch_customers
+    description: "TPC-H customer dimension with surrogate keys."
+    columns:
+      - name: customer_surrogate_key
+        description: "Surrogate key generated from customer_key."
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: "Natural key from TPC-H source."
+        tests:
+          - unique
+          - not_null

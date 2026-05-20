@@ -2,18 +2,20 @@
 __pycache__/
 *.py[cod]
 *.pyo
-.venv/
-af/
 venv/
+af/
+.venv/
 *.egg-info/
 
 # Environment variables — NEVER commit secrets
 .env
 
-# dbt
+# dbt generated files — never commit these
 dbt/target/
-dbt/dbt_packages/
-dbt/logs/
+target/
+dbt_packages/
+logs/
+package-lock.yml
 
 # Data files — too large for Git
 data/
@@ -21,3 +23,6 @@ data/
 # OS
 .DS_Store
 Thumbs.db
+
+# Elementary
+edr_target/

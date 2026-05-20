@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: int_orders__enriched
+    description: >
+      Wide order model joining orders, order items, and payments.
+      Aggregates item and payment metrics to order level.
+      Primary input for fct_orders.
+    columns:
+      - name: order_id
+        description: "Unique order identifier."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "FK to stg_olist__customers."
+        tests:
+          - not_null
+      - name: order_item_count
+        description: "Number of items in this order."
+      - name: order_total_value
+        description: "Total order value including freight in BRL."
+      - name: payment_type
+        description: "Primary payment method used."
+
+  - name: int_orders__delivery_times
+    description: >
+      Delivery time calculations for delivered orders only.
+      Contains days to deliver, late delivery flags, and SLA metrics.
+    columns:
+      - name: order_id
+        description: "Unique order identifier."
+        tests:
+          - unique
+          - not_null
+      - name: days_to_deliver
+        description: "Actual days from purchase to customer delivery."
+      - name: is_late_delivery
+        description: "True if delivered after estimated delivery date."
+      - name: is_severely_late
+        description: "True if delivered more than 7 days after estimate."
+
+  - name: int_reviews__aggregated
+    description: >
+      Reviews aggregated to order level. Contains average score,
+      response time, and comment flag per order.
+    columns:
+      - name: order_id
+        description: "Unique order identifier."
+        tests:
+          - unique
+          - not_null
+      - name: avg_review_score
+        description: "Average review score for this order (1-5)."
+      - name: avg_response_time_hours
+        description: "Average hours between review creation and seller response."
+      - name: has_comment
+        description: "1 if any review for this order had a written comment."

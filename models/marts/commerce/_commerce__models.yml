@@ -1,0 +1,152 @@
+version: 2
+
+models:
+  - name: dim_date
+    description: "Date dimension covering 2016-2018. One row per day with full calendar attributes and Brazilian holiday flags."
+    columns:
+      - name: date_key
+        description: "Surrogate key in YYYYMMDD integer format."
+        tests:
+          - unique
+          - not_null
+      - name: full_date
+        description: "Full calendar date."
+        tests:
+          - unique
+          - not_null
+      - name: is_weekend
+        description: "True if Saturday or Sunday."
+        tests:
+          - not_null
+      - name: is_holiday_br
+        description: "True if Brazilian public holiday."
+        tests:
+          - not_null
+
+  - name: dim_customers
+    description: "Customer dimension. One row per customer_id with location attributes and surrogate key."
+    columns:
+      - name: customer_key
+        description: "Surrogate key generated from customer_id."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Natural key from source system."
+        tests:
+          - unique
+          - not_null
+      - name: customer_state
+        description: "Two-letter Brazilian state code."
+        tests:
+          - not_null
+
+  - name: dim_sellers
+    description: "Seller dimension. One row per seller with location attributes and surrogate key."
+    columns:
+      - name: seller_key
+        description: "Surrogate key generated from seller_id."
+        tests:
+          - unique
+          - not_null
+      - name: seller_id
+        description: "Natural key from source system."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Product dimension with English category names and physical dimensions."
+    columns:
+      - name: product_key
+        description: "Surrogate key generated from product_id."
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+        description: "Natural key from source system."
+        tests:
+          - unique
+          - not_null
+      - name: product_category_english
+        description: "Product category translated to English."
+        tests:
+          - not_null
+
+  - name: fct_orders
+    description: >
+      Primary fact table. One row per order. Contains all order metrics,
+      delivery performance, review scores, and foreign keys to all dimensions.
+    columns:
+      - name: order_key
+        description: "Surrogate key for this fact row."
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "Natural key from source system."
+        tests:
+          - unique
+          - not_null
+      - name: customer_key
+        description: "FK to dim_customers."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_key
+      - name: seller_key
+        description: "FK to dim_sellers."
+        tests:
+          - relationships:
+              to: ref('dim_sellers')
+              field: seller_key
+      - name: product_key
+        description: "FK to dim_products."
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_key
+      - name: date_key
+        description: "FK to dim_date."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: order_total_value
+        description: "Total order value including items and freight in BRL."
+        tests:
+          - not_null
+      - name: is_late_delivery
+        description: "True if actual delivery was after estimated delivery date."
+        tests:
+          - not_null
+
+  - name: fct_reviews
+    description: "Reviews fact table. One row per review with FK to fct_orders and dim_customers."
+    columns:
+      - name: review_key
+        description: "Surrogate key for this review."
+        tests:
+          - unique
+          - not_null
+      - name: order_key
+        description: "FK to fct_orders."
+        tests:
+          - not_null
+      - name: customer_key
+        description: "FK to dim_customers."
+        tests:
+          - not_null
+      - name: review_score
+        description: "Customer rating from 1 to 5."
+        tests:
+          - not_null
+          - accepted_values:
+              config:
+                values: [1, 2, 3, 4, 5]
+      - name: has_comment
+        description: "True if customer left a written comment."
+        tests:
+          - not_null

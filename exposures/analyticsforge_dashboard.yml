@@ -1,0 +1,41 @@
+version: 2
+
+exposures:
+  - name: analyticsforge_commerce_dashboard
+    type: dashboard
+    maturity: medium
+    url: https://placeholder-dashboard-url.com
+
+    description: >
+      Main AnalyticsForge analytics dashboard built on the commerce mart layer.
+      Covers executive KPIs, customer analytics, product performance,
+      seller analytics, and delivery operations across 5 pages.
+
+    depends_on:
+      - ref('fct_orders')
+      - ref('fct_reviews')
+      - ref('dim_customers')
+      - ref('dim_sellers')
+      - ref('dim_products')
+      - ref('dim_date')
+
+    owner:
+      name: Tarun Nichwani
+      email: placeholder@email.com
+
+  - name: analyticsforge_tpch_dashboard
+    type: dashboard
+    maturity: low
+    url: https://placeholder-tpch-url.com
+
+    description: >
+      Secondary dashboard demonstrating TPC-H Snowflake-native querying.
+      Shows order volume, revenue trends, and customer segmentation.
+
+    depends_on:
+      - ref('fct_tpch_orders')
+      - ref('dim_tpch_customers')
+
+    owner:
+      name: Tarun Nichwani
+      email: placeholder@email.com
