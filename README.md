@@ -80,19 +80,22 @@ fct_reviews ──→ fct_orders
 ---
 
 ## Project Structure
+```text
 analyticsforge/
-├── ingestion/          # Python scripts to load CSVs into Snowflake
+├── ingestion/              # Python scripts to load CSVs into Snowflake
 ├── models/
-│   ├── staging/        # One model per source — clean, typed, renamed
-│   ├── intermediate/   # Business logic, joins, derived fields
-│   └── marts/          # Star schema — facts and dimensions
-├── macros/             # Custom dbt macros
-├── snapshots/          # SCD Type 2 on dim_customers
-├── seeds/              # Brazilian public holidays, category translations
-├── tests/              # Singular data quality tests
-├── exposures/          # Dashboard consumer documentation
-├── docs/               # Architecture diagrams, dashboard screenshots
-└── .github/workflows/  # CI/CD pipelines
+│   ├── staging/            # One model per source — clean, typed, renamed
+│   ├── intermediate/       # Business logic, joins, derived fields
+│   └── marts/              # Star schema — facts and dimensions
+├── macros/                 # Custom dbt macros
+├── snapshots/              # SCD Type 2 on dim_customers
+├── seeds/                  # Brazilian public holidays, category translations
+├── tests/                  # Singular data quality tests
+├── exposures/              # Dashboard consumer documentation
+├── docs/                   # Architecture diagrams, dashboard screenshots
+└── .github/
+    └── workflows/          # CI/CD pipelines
+```
 
 ---
 
