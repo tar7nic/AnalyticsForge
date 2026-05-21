@@ -4,6 +4,11 @@ models:
   - name: dim_date
     description: "Date dimension covering 2016-2018. One row per day with full calendar attributes and Brazilian holiday flags."
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: false
       elementary:
         timestamp_column: "full_date"
     tests:
@@ -34,6 +39,11 @@ models:
   - name: dim_customers
     description: "Customer dimension. One row per customer_id with location attributes and surrogate key."
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: true
       elementary:
         timestamp_column: "loaded_at"
     columns:
@@ -55,6 +65,11 @@ models:
   - name: dim_sellers
     description: "Seller dimension. One row per seller with location attributes and surrogate key."
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: false
       elementary:
         timestamp_column: "loaded_at"
     columns:
@@ -72,6 +87,11 @@ models:
   - name: dim_products
     description: "Product dimension with English category names and physical dimensions."
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: false
       elementary:
         timestamp_column: "loaded_at"
     columns:
@@ -95,6 +115,11 @@ models:
       Primary fact table. One row per order. Contains all order metrics,
       delivery performance, review scores, and foreign keys to all dimensions.
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: false
       elementary:
         timestamp_column: "order_purchased_at"
     tests:
@@ -173,6 +198,11 @@ models:
   - name: fct_reviews
     description: "Reviews fact table. One row per review with FK to fct_orders and dim_customers."
     config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'gold'
+        contains_pii: false
       elementary:
         timestamp_column: "review_created_at"
     tests:

@@ -1,0 +1,48 @@
+version: 2
+
+macros:
+  - name: cents_to_dollars
+    description: >
+      Converts a value in cents (integer) to dollars (decimal with 2 places).
+      Safe against nulls — returns 0 for null inputs.
+    arguments:
+      - name: column_name
+        type: string
+        description: "Name of the column containing the value in cents."
+      - name: scale
+        type: integer
+        description: "Number of decimal places. Defaults to 2."
+
+  - name: safe_divide
+    description: >
+      Divides numerator by denominator safely. Returns NULL instead of
+      an error when denominator is zero or null. Used for rate calculations
+      like on-time delivery rate and average order value.
+    arguments:
+      - name: numerator
+        type: string
+        description: "The numerator column or expression."
+      - name: denominator
+        type: string
+        description: "The denominator column or expression."
+
+  - name: is_valid_email
+    description: >
+      Returns TRUE if the column value matches a valid email address pattern.
+      Uses regex pattern matching. Used in data quality checks.
+    arguments:
+      - name: column_name
+        type: string
+        description: "Name of the column containing the email address."
+
+  - name: generate_date_spine
+    description: >
+      Wrapper around dbt_utils.date_spine for consistent date range generation.
+      Defaults to the full Olist dataset date range (2016-01-01 to 2019-01-01).
+    arguments:
+      - name: start_date
+        type: string
+        description: "Start date string in YYYY-MM-DD format. Defaults to 2016-01-01."
+      - name: end_date
+        type: string
+        description: "End date string in YYYY-MM-DD format. Defaults to 2019-01-01."

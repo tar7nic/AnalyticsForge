@@ -95,18 +95,44 @@ models:
 
   - name: stg_olist__customers
     description: "Cleaned staging model for customers. One row per customer_id."
+    config:
+      meta:
+        owner: 'Tarun Nichwani'
+        domain: 'commerce'
+        tier: 'silver'
+        contains_pii: true
     columns:
       - name: customer_id
         description: "Unique identifier per order — not unique per person."
+        meta:
+          pii: true
         tests:
           - unique
           - not_null
       - name: customer_unique_id
         description: "True unique customer identifier across multiple orders."
+        meta:
+          pii: true
+        tests:
+          - not_null
+      - name: customer_zip_code
+        description: "First 5 digits of customer zip code."
+        meta:
+          pii: true
+        tests:
+          - not_null
+      - name: customer_city
+        description: "Customer city name — lowercased and trimmed."
+        meta:
+          pii: true
         tests:
           - not_null
       - name: customer_state
-        description: "Two-letter Brazilian state code."
+        description: "Two-letter Brazilian state code — uppercased."
+        tests:
+          - not_null
+      - name: loaded_at
+        description: "Timestamp when this row was loaded by dbt."
         tests:
           - not_null
 
