@@ -122,19 +122,19 @@ Elementary monitors configured on all mart models:
 
 ---
 
+
 ## Elementary Reports
-```html
-```md id="2k8d9m"
+
 <p align="center">
-  <img src="./docs/edr1.png" width="45%">
-  <img src="./docs/edr2.png" width="45%">
+  <img src="docs/edr1.png" width="45%" />
+  <img src="docs/edr2.png" width="45%" />
 </p>
 
 <p align="center">
-  <img src="./docs/edr3.png" width="45%">
-  <img src="./docs/edr4.png" width="45%">
+  <img src="docs/edr3.png" width="45%" />
+  <img src="docs/edr4.png" width="45%" />
 </p>
-```
+
 
 ---
 
