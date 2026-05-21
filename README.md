@@ -120,7 +120,21 @@ Elementary monitors configured on all mart models:
 - Freshness anomaly detection on `fct_orders` and `dim_customers`
 - Column anomaly monitoring on `review_score` and `order_total_value`
 
-![Elementary Report](docs/edr1.png)
+```html
+## Elementary Reports
+
+<table>
+  <tr>
+    <td><img src="docs/edr1.png" width="100%"/></td>
+    <td><img src="docs/edr2.png" width="100%"/></td>
+  </tr>
+  <tr>
+    <td><img src="docs/edr3.png" width="100%"/></td>
+    <td><img src="docs/edr4.png" width="100%"/></td>
+  </tr>
+</table>
+```
+
 
 ---
 
