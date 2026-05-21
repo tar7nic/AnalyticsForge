@@ -8,11 +8,11 @@
 
 Full dashboard pages exported as MHTML files — download and open in Chrome for the complete interactive view:
 
-- 📊 [Executive Overview](docs/Executive%20Overview.mhtml)
-- 👥 [Customer Analytics](docs/Customer%20Analytics.mhtml)
-- 📦 [Product Performance](docs/Product%20Performance.mhtml)
-- 🏪 [Seller Analytics](docs/Seller%20Analytics.mhtml)
-- 🚚 [Delivery & Operations](docs/Delivery%20%26%20Operations.mhtml)
+- 📊 [Executive Overview](docs/ExecutiveOverview.pdf)
+- 👥 [Customer Analytics](docs/CustomerAnalytics.pdf)
+- 📦 [Product Performance](docs/ProductPerformance.pdf)
+- 🏪 [Seller Analytics](docs/SellerAnalytics.pdf)
+- 🚚 [Delivery & Operations](docs/DeliveryAndOperations.pdf)
 
 ---
 
